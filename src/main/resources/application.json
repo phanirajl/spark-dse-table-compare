@@ -1,21 +1,30 @@
 {
-  "system_table"  : {
-    "keyspace"    : "system_schema",
-    "table"       : "columns"
+  "system_table"    : {
+    "keyspace"      : "system_schema",
+    "table"         : "columns"
   },
-  "master_table"  : {
-    "keyspace"    : "uline_tester",
-    "table"       : "item_by_item_idea"
+  "master_table"    : {
+    "keyspace"      : "compare",
+    "table"         : "catalog_master_by_country_and_code_dse"
   },
-  "compare_table" : {
-    "keyspace"    : "uline_tester",
-    "table"       : "item_by_item_id_2"
+  "compare_table"   : {
+    "keyspace"      : "compare",
+    "table"         : "catalog_master_by_country_and_code_luw"
   },
-  "join_column"   : {
-    "t1_name"     : "item_id",
-    "t2_name"     : "item_id"
+  "join_column"     : {
+    "primary"       : "country_code",
+    "clustering1"   : "catalog_code",
+    "clustering2"   : "",
+    "clustering3"   : "",
+    "clustering4"   : ""
   },
-  "csv_path"      : {
-    "output_path" : "file:///Users/jamescolvin/Downloads/dse-6.7.5/lib/data/spark/item_by_item_id_diff"
+  "csv_path"        : {
+    "output_path"   : "file:///Users/jamescolvin/Downloads/dse-6.7.5/lib/data/spark/item_by_item_id_diff"
+  },
+  "exclude_columns" : {
+    "column_list"   : [
+      "last_changed",
+      "expected_response_percent"
+    ]
   }
 }
